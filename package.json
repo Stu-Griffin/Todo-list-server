@@ -4,7 +4,7 @@
   "description": "Api server for Todo list app. Based on Node JS, Express JS, Mongo DB, TypeScript",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build &&node dist/server.js",
+    "start": "node dist/src/index.js",
     "build": "tsc",
     "nodemon": "nodemon ./src/server.ts",
     "dev": "npm run build && npm run nodemon"
