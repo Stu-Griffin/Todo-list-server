@@ -1,9 +1,9 @@
+import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
-import connectDB from './config/connectDB';
-import cors from 'cors';
 import config from './config/config';
 import AppRouter from './routes/routes';
+import connectDB from './config/connectDB';
 
 const app = express();
 const router = new AppRouter(app);
