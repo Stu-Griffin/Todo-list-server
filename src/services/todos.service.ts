@@ -1,3 +1,4 @@
+import ITodo, { ITodoChange } from '../types/todo.type';
 import TodoModel from '../models/todo.model';
 
 class TodoServices {
@@ -17,7 +18,7 @@ class TodoServices {
         const result = await TodoModel.create(todo);
         return result;
     }
-    async changeTodo(id: string, todo: any) {
+    async changeTodo(id: string, todo: ITodoChange) {
         const result = await TodoModel.updateOne({ _id: id }, todo);
         return result;
     }

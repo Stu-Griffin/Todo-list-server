@@ -7,8 +7,11 @@ export class UserController {
     async getAll(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.findAllUsers());
     }
-    async getOne(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.userService.findOneUser(req.params.id));
+    async getOneById(req: Request, res: Response) {
+        tryCatchMiddleware(req, res, this.userService.findOneUserById(req.params.id));
+    }
+    async findOneByLogin(req: Request, res: Response) {
+        tryCatchMiddleware(req, res, this.userService.findOneUserBylogin(req.body.login));
     }
     async put(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.changeUser(req.params.id, {

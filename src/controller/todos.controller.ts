@@ -24,8 +24,7 @@ export class TodoController {
         tryCatchMiddleware(req, res, this.todoService.createTodo({
             title: req.body.title,
             text: req.body.text,
-            author: req.body.author,
-            status: req.body.status
+            author: req.body.author
         }));
     }
     async delete(req: Request, res: Response) {

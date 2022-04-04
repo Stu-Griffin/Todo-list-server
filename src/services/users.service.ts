@@ -5,11 +5,15 @@ import { IUserInf, IUserChange } from '../types/user.type';
 class UserServices {
     async findAllUsers() {
         const result = await UserModel.find();
-        return result;
+        return result
     }
-    async findOneUser(id: string) {
+    async findOneUserById(id: string) {
         const result = await UserModel.findOne({_id: id});
-        return result;
+        return result
+    }
+    async findOneUserBylogin(login: string) {
+        const result = await UserModel.findOne({login: login});
+        return result
     }
     async signInUser(user: IUserInf) {
         const {login, password} = user;
@@ -50,11 +54,11 @@ class UserServices {
     }
     async changeUser(id: string, user: IUserChange) {
         const result = await UserModel.updateOne({ _id: id }, user);
-        return result;
+        return result
     }
     async deleteUser(id: string) {
         const result = await UserModel.deleteOne({_id: id});
-        return result;
+        return result
     }
 }
 
