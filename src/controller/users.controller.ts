@@ -5,35 +5,35 @@ import tryCatchMiddleware from "../middlewares/try.catch.middleware";
 export class UserController {
     constructor(private userService: UserServices) {}
     async getAll(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.userService.findAllUsers());
+        tryCatchMiddleware(req, res, this.userService.findAll());
     }
-    async getOneById(req: Request, res: Response) {
+    async getOneUserById(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.findOneUserById(req.params.id));
     }
-    async findOneByLogin(req: Request, res: Response) {
+    async findOneUserBylogin(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.findOneUserBylogin(req.body.login));
     }
     async put(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.userService.changeUser(req.params.id, {
+        tryCatchMiddleware(req, res, this.userService.change(req.params.id, {
             login: req.body.login,
             password: req.body.password,
             todosArr: req.body.todosArr
         }));
     }
-    async signIn(req: Request, res: Response) {
+    async signInUser(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.signInUser({
             login: req.body.login,
             password: req.body.password
         }));
     }
-    async signUp(req: Request, res: Response) {
+    async signUpUser(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.userService.signUpUser({
             login: req.body.login,
             password: req.body.password
         }));
     }
     async delete(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.userService.deleteUser(req.params.id));
+        tryCatchMiddleware(req, res, this.userService.delete(req.params.id));
     }
 }
 

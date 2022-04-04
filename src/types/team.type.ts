@@ -1,6 +1,6 @@
-interface ITodoTeam {
+interface ITeam {
     name: string,
     members: Array<string>,
 }
 
-export default ITodoTeam;
+export default ITeam;

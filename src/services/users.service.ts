@@ -3,7 +3,7 @@ import UserModel from '../models/user.model';
 import { IUserInf, IUserChange } from '../types/user.type';
 
 class UserServices {
-    async findAllUsers() {
+    async findAll() {
         const result = await UserModel.find();
         return result
     }
@@ -52,11 +52,11 @@ class UserServices {
             message: 'User was created'
         });
     }
-    async changeUser(id: string, user: IUserChange) {
+    async change(id: string, user: IUserChange) {
         const result = await UserModel.updateOne({ _id: id }, user);
         return result
     }
-    async deleteUser(id: string) {
+    async delete(id: string) {
         const result = await UserModel.deleteOne({_id: id});
         return result
     }

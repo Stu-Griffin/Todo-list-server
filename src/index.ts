@@ -15,6 +15,6 @@ app.use(cors({origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE']}));
 connectDB();
 router.init();
 
-app.listen(process.env.PORT || config.port, (): void => {
+app.listen(config.port, (): void => {
     console.log('Server Running!');
 });

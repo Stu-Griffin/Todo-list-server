@@ -7,11 +7,11 @@ export class TodoController {
     async getAll(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.todoService.findAllTodos());
     }
-    async getAllUsersTodos(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.todoService.findAllUsersTodos(req.params.id));
+    async getAllTodosById(req: Request, res: Response) {
+        tryCatchMiddleware(req, res, this.todoService.findAllTodosByAuthor(req.params.id));
     }
-    async getOne(req: Request, res: Response) {
-        tryCatchMiddleware(req, res, this.todoService.findOneTodo(req.params.id));
+    async getOneTodoByname(req: Request, res: Response) {
+        tryCatchMiddleware(req, res, this.todoService.findOneTodoById(req.params.id));
     }
     async put(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.todoService.changeTodo(req.params.id, {

@@ -1,16 +1,15 @@
-import ITodo, { ITodoChange } from '../types/todo.type';
 import TodoModel from '../models/todo.model';
-
+import { ITodoChange } from '../types/todo.type';
 class TodoServices {
     async findAllTodos() {
         const result = await TodoModel.find();
         return result;
     }
-    async findAllUsersTodos(id: string) {
+    async findAllTodosByAuthor(id: string) {
         const result = await TodoModel.find({author: id});
         return result;
     }
-    async findOneTodo(id: string) {
+    async findOneTodoById(id: string) {
         const result = await TodoModel.findOne({_id: id});
         return result;
     }
