@@ -14,6 +14,10 @@ class TeamServices {
         const result = await TeamSchema.create(team);
         return result;
     }
+    async findOneTeamById(id: string) {
+        const result = await TeamSchema.findOne({_id: id});
+        return result;
+    }
     async findOneTeamByName(name: string) {
         const result = await TeamSchema.findOne({name: name});
         return result;

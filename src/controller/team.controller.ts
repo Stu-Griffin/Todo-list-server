@@ -13,6 +13,9 @@ export class TeamController {
     async findTeamByName(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.todoTeamService.findOneTeamByName(req.body.name));
     }
+    async findTeamById(req: Request, res: Response) {
+        tryCatchMiddleware(req, res, this.todoTeamService.findOneTeamById(req.params.id));
+    }
     async put(req: Request, res: Response) {
         tryCatchMiddleware(req, res, this.todoTeamService.changeOneTeam(req.params.id, {
             name: req.body.name,
