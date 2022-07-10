@@ -1,5 +1,6 @@
 import TodoModel from '../models/todo.model';
 import { ITodoChange } from '../types/todo.type';
+
 class TodoServices {
     async findAllTodos() {
         const result = await TodoModel.find();

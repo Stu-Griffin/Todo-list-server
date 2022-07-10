@@ -1,7 +1,7 @@
+import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
-import config from './config/config';
 import AppRouter from './routes/routes';
 import connectDB from './config/connectDB';
 
@@ -15,6 +15,6 @@ app.use(cors({origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE']}));
 connectDB();
 router.init();
 
-app.listen(process.env.PORT || config.port, (): void => {
+app.listen(process.env.PORT!, (): void => {
     console.log('Server Running!');
 });
